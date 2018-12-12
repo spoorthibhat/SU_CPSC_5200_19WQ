@@ -28,19 +28,19 @@ As a result of that we will not (at this time) have a textbook. I will recommend
 * 15-Jan: Patterns of Software Architecture I
 * 17-Jan: Patterns of Software Architecture II
 * 22-Jan: Guest lecture on Actors
-* 24-Jan: Guest lecture on Actors
-* 29-Jan: Microservices, serverless, and distribution
+* 24-Jan: Guest lecture Architecture Economics
+* 29-Jan: Microservices, serverless, and distributed systems
 * 31-Jan: Re-design / re-arch (TNG design session)
 * 05-Feb: Agile Software Architecture
 * 07-Feb: **In-class mid-term exam**
-* 12-Feb: Design Patterns I
-* 14-Feb: Design Patterns II
-* 19-Feb: Introduction to UML
-* 21-Feb: API Design
+* 12-Feb: Introduction to UML
+* 14-Feb: API Design
+* 19-Feb: Design Patterns I
+* 21-Feb: Design Patterns II
 * 26-Feb: Possible guest lecture (non-functional requirements)
-* 28-Feb: Possible guest lecture (distribution in time and space)
-* 05-Mar: Anti-patterns and topics in software architecture and design
-* 07-Mar: Pragmatic programming
+* 28-Feb: Possible guest lecture (documenting software architecture and design)
+* 05-Mar: Anti-patterns and Topics in Software Architecture and Design
+* 07-Mar: Pragmatic Programming
 * 12-Mar and 14-Mar: **In-class project presentations and demonstrations**
 * 19-Mar: **Final exam due**
 
@@ -51,7 +51,6 @@ As a result of that we will not (at this time) have a textbook. I will recommend
 * Design patterns and styles
 * Introduction to UML and modeling concepts
 * Architectural process, structures, and the role of "The Architect"
-
 
 ## Assignments (tentative)
 

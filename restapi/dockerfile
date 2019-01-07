@@ -1,0 +1,10 @@
+FROM microsoft/aspnetcore
+
+WORKDIR /app
+COPY bin/Debug/netcoreapp2.0/publish/ .
+
+ARG APP_PORT=5000
+ENV ASPNETCORE_URLS http://+:$APP_PORT
+EXPOSE $APP_PORT
+
+CMD ["dotnet","/app/restapi.dll"]

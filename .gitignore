@@ -2,4 +2,7 @@
 Grades.xlsx
 finals/
 submitted/
+.vscode/
+bin/
+obj/
 ~*

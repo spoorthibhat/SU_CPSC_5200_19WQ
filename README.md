@@ -11,15 +11,16 @@ Overview of design principles, architectural design techniques, modeling and ana
 
 ## Course Learning Objectives
 
-* First
-* Second
-* Third
+* Architecture and design styles and patterns, and how / when to apply them
+* The role of architecture and the software architect within the context of software projects
+* How architecture and design interact to deliver software products
+* Any number of interesting and related software development topics from an architect's perspective
 
 ## Reading Materials
 
 Most materials for this class will be provided by the instructor. While there are plenty of texts that cover software architecture, design, and the combination, none really capture what I'm looking for in this course. I will generally assign 1 - 2 short readings per week. When I do this I will provide links in the lecture materials and, if appropriate, I will provide a PDF.
 
-As a result of that we will not (at this time) have a textbook. I will recommend various books over the quarter. These are meant to be something you read and / or refer to when you need it in your career. That is, these will be reference texts for your bookshelf. (You have one, right?)
+As a result of that we will not (at this time) have a textbook. I will recommend various books over the quarter. These are meant to be something you read and / or refer to when you need it in your career. That is, these will be reference texts for your bookshelf. (You have one, right?) I will recommend these materials each class in the slides and in an [overall reading list](BOOKLIST.md).
 
 ## Important Dates
 
@@ -28,20 +29,20 @@ As a result of that we will not (at this time) have a textbook. I will recommend
 * 15-Jan: Patterns of Software Architecture I
 * 17-Jan: Patterns of Software Architecture II
 * 22-Jan: Guest lecture on Actors
-* 24-Jan: Guest lecture Architecture Economics
+* 24-Jan: Guest lecture on Economics of Software Architecture
 * 29-Jan: Microservices, serverless, and distributed systems
 * 31-Jan: Re-design / re-arch (TNG design session)
-* 05-Feb: Agile Software Architecture
+* 05-Feb: Introduction to UML
 * 07-Feb: **In-class mid-term exam**
-* 12-Feb: Introduction to UML
+* 12-Feb: Documenting software architecture and design
 * 14-Feb: API Design
 * 19-Feb: Design Patterns I
 * 21-Feb: Design Patterns II
 * 26-Feb: Possible guest lecture (non-functional requirements)
-* 28-Feb: Possible guest lecture (documenting software architecture and design)
+* 28-Feb: Possible guest lecture (Agile Software Architecture)
 * 05-Mar: Anti-patterns and Topics in Software Architecture and Design
 * 07-Mar: Pragmatic Programming
-* 12-Mar and 14-Mar: **In-class project presentations and demonstrations**
+* 12 and 14-Mar: **In-class project presentations and demonstrations**
 * 19-Mar: **Final exam due**
 
 ## List of topics / schedule (tentative)
@@ -54,31 +55,44 @@ As a result of that we will not (at this time) have a textbook. I will recommend
 
 ## Assignments (tentative)
 
-At this time I expect to have a single project that we work on throughout the quarter. As such we will be learning tools and techniques that get us to the final "demo day" where we'll do an in-class demo. During the quarter we'll have intermediate "releases" in the form of assignments (think of them as sprints if that helps).
+At this time I expect to have a single project that we work on throughout the quarter. As such we will be learning tools and techniques that get us to the final "demo day" where we'll do an in-class demo. During the quarter we'll have intermediate "releases" in the form of assignments (think of them as sprints if that helps). You can find the project description [here](project/README.md).
 
 ## Grading
 
-### High-level
+This class is graded on the following scale. Over the course of the quarter you will be given, via homework, exams, projects, and participation, the opportunity to earn 100 points. Exams may include an "extra credit" opportunity. An "A" grade is easily achievable in my courses, but you will need to put in the work.
 
-This class is graded on the following scale. Over the course of the quarter you will be given, via homework, exams, projects, and participation, the opportunity to earn 100 points. Exams may include an "extra credit" opportunity. An "A" grade is easily achievable in my courses, but you  will need to put in the work.
+The following scale is different from the overall University's scale. I do not grade with +/- modifiers. There are only three possible passing grades in this class. I'm also very strict about these cut-points and have been for many years.
 
-* 95+ points - A
-* 90+ points - B
-* 85+ points - C
+* **95+ points** - A
+* **90+ points** - B
+* **85+ points** - C
+* **below 85 is considered a failing grade**
 
 ### Course assignment and grading breakdown
 
 This is a tentative break-down, I'll adjust during the first week(s) of class based on class size and experience.
 
-* list of assignments, etc
+* Project architecture paper due 31-Jan (**5 points**)
+* Mid-term exam, in class on 07-Feb (**15 points**)
+* Project preliminary design paper due 19-Feb (**5 points**)
+* Project detailed design document due 07-Mar (**5 points**)
+* Final project materials due 12-Mar
+* Project presentations on 12- and 14-Mar (**25 points**)
+* Final exam, take home, due on 19-Mar (**25 points**)
+* In-class participation (**10 points**)
+* Random individual homework and / or in-class quizzes (**10 points**)
 
-Software engineering is a team process and one of the most important parts of that is communication. This includes both written and verbal. As such, the exams will be essay format (to include requirements artifacts as necessary). I also *expect* full classroom participation in discussions. Feel free to voice your opinions and disagree with what you're learning. That's part of the process. But do so in a respectful manner.
+### Note on class participation
 
-You will be expected to present matertials to the class. These presentations are usually short (10 minutes), concise, and expected to cover information from the class.
+Twenty points in this class are completely in your hands as an individual. But, software engineering is a team process and one of the most important parts of that is communication. This includes both written and verbal. As such, the exams will be essay format (to include requirements artifacts as necessary). I also *expect* full classroom participation in discussions. Feel free to voice your opinions and disagree with what you're learning. That's part of the process. But do so in a respectful manner.
+
+It's also extremely rare to have a software project of any reasonable or useful size conceived and built by a single person (see above _team process_). This is my primary motivation for the heavy weighting on the project this quarter..
+
+You will be expected to present matertials to the class. These presentations are usually short (10 minutes), concise, and expected to cover information from the class. I will occasionally call on you, randomly, to present or work out a problem at the whiteboard.
 
 ## Class structure
 
-We have 2 hours twice a week. Each class will consist of a 10 - 15 minute class discussion of any reading assignment or outside work from the previous week. We will then take 90 minutes to cover the night's materials with a short break approximately half-way through. On Wednesdays we will spend the final 15 minutes covering the assignment for the week.
+We have 2 hours twice a week. Each class will consist of a 10 - 15 minute class discussion of any reading assignment or outside work from the previous week. We will then take 90 minutes to cover the night's materials with a short break approximately half-way through. On Thursdays, if necessary, we will spend the final 15 minutes covering the assignment for the week.
 
 Occasionally we will have one or more of you presenting to the class. I'll schedule these as appropriate.
 
@@ -94,11 +108,12 @@ Cellphone usage is not permitted in class. Turn them off and put them out of sig
 
 _Late homework will not be accepted. You are responsible to make sure your assignment is submitted before the deadline. Late submissions will receive a zero. Individual extensions will only be given in extraordinary circumstances communicated with the professor before the deadline._
 
-Please follow the specific instructions and submission policy for each assignment. Your assignment may be submitted on paper to the instructor. In the case of an electronic submission, make sure that your submission is in Microsoft Word or PDF format (ZIP, text or image files are not accepted). Also submit a single document and make sure all your figures are included in your main document. You are responsible to make sure that your file is not corrupted and that it is readable by the instructor. All submissions must include your name.
+Please follow the specific instructions and submission policy for each assignment. Your assignment may be submitted on paper to the instructor. In the case of an electronic submission, make sure that your submission is in Microsoft Word or PDF format (ZIP, text or image files are not accepted and get stripped out by the SU email system). Also submit a single document and make sure all your figures are included in your main document. You are responsible to make sure that your file is not corrupted and that it is readable by the instructor. All submissions must include your name (and in the case of group submissions, names of all group members).
 
 ## Workload Expectation
 
 You are expected to keep up with the course material. This includes completion of the reading assignments that are posted in the lecture notes and / or schedule. Unless explicitly noted, you are responsible for all assigned material even if a topic was not covered during the lecture.
+
 This is a five-credit hour class, and consequently you are required to spend at least 10 hours per week outside of class to prepare for the course, study material, and work on homework assignments or project.
 
 ## Courtesy
@@ -112,7 +127,7 @@ This is a five-credit hour class, and consequently you are required to spend at 
 
 ## Grading Dispute Policy
 
-If you feel that part of your homework or exam was graded incorrectly, you may contact me within a week from when the exam or assignment was returned to you.
+If you feel that part of your homework or exam was graded incorrectly, you may contact me within two days from when the exam or assignment was returned to you.
 
 ## Academic Integrity
 

@@ -215,6 +215,7 @@ namespace restapi.Models
         public AnnotatedTimecardLine updateLineItem(TimecardLine timecardLine, int lineNum)
         {
             // The Lines are stored in the list at positions coressponding to their lineNum-1
+            
             var storedTimeCardLine = Lines.ElementAtOrDefault(lineNum-1);
             if(timecardLine.Week != 0){
                 storedTimeCardLine.Week = timecardLine.Week;

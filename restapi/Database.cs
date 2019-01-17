@@ -10,6 +10,8 @@ namespace restapi
         private static readonly IDictionary<string, Timecard> Timecards = 
             new Dictionary<string, Timecard>();
         
+        public static int lineNumCount = 0;
+        
         public static IEnumerable<Timecard> All
         {
             get => Timecards.Values.ToList();
@@ -32,6 +34,11 @@ namespace restapi
         public static void Add(Timecard timecard)
         {
             Timecards.Add(timecard.Identity.Value, timecard);
+        }
+
+        public static void Remove(Timecard timecard)
+        {
+            Timecards.Remove(timecard.Identity.Value);
         }
     }
 }

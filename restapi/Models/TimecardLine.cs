@@ -15,6 +15,8 @@ namespace restapi.Models
         public float Hours { get; set; }
 
         public string Project { get; set; }
+
+        //public int LineNumber{get; set; }
     }
 
     public class AnnotatedTimecardLine : TimecardLine
@@ -30,6 +32,8 @@ namespace restapi.Models
             Day = line.Day;
             Hours = line.Hours;
             Project = line.Project;
+            //Database.lineNumCount++;
+            //LineNumber = Database.lineNumCount; // changed here
 
             Recorded = DateTime.UtcNow;
             workDate = FirstDateOfWeekISO8601(line.Year, line.Week).AddDays((int)line.Day - 1);
@@ -74,6 +78,27 @@ namespace restapi.Models
             var result = firstThursday.AddDays(weekNum * 7);
 
             return result.AddDays(-3);
-        }        
+        }      
+
+        // override object.Equals
+        public override bool Equals(object obj)
+        {
+           
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            
+            AnnotatedTimecardLine annotatedTimecardLine = (AnnotatedTimecardLine)obj;
+            return (LineNumber == annotatedTimecardLine.LineNumber);
+            
+        }
+        
+        // override object.GetHashCode
+        public override int GetHashCode()
+        {
+            // TODO: write your implementation of GetHashCode() here
+            return this.LineNumber.GetHashCode();
+        }  
     }
 }

@@ -10,6 +10,7 @@ namespace restapi.Models
     {
         public Timecard(int resource)
         {
+            Resource = resource;
             UniqueIdentifier = Guid.NewGuid();
             Identity = new TimecardIdentity();
             Lines = new List<AnnotatedTimecardLine>();
@@ -78,11 +79,34 @@ namespace restapi.Models
                     });
 
                     links.Add(new ActionLink() {
+                        
                         Method = Method.Post,
                         Type = ContentTypes.TimesheetLine,
                         Relationship = ActionRelationship.RecordLine,
                         Reference = $"/timesheets/{Identity.Value}/lines"
                     });
+
+                    links.Add(new ActionLink(){
+                        Method = Method.Delete,
+                        Relationship = ActionRelationship.Remove,
+                        Reference = $"/timesheets/{Identity.Value}/removal"
+                    });
+                    if(Lines.Count > 0){
+                        links.Add(new ActionLink(){
+                        Method = Method.Post,
+                        Type = ContentTypes.TimesheetLine,
+                        Relationship = ActionRelationship.ReplaceLine,
+                        Reference = $"/timesheets/{Identity.Value}/replaceLine/<LineNumber>"
+                        });
+
+                        links.Add(new ActionLink(){
+                            Method = Method.Patch,
+                            Type = ContentTypes.TimesheetLine,
+                            Relationship = ActionRelationship.UpdateLineItem,
+                            Reference = $"/timesheets/{Identity.Value}/updateItem/<LineNumber>"
+                        });
+                    }
+                    
                 
                     break;
 
@@ -115,7 +139,12 @@ namespace restapi.Models
                     break;
 
                 case TimecardStatus.Cancelled:
-                    // terminal state, nothing possible here
+                    // exposing the delete option once the timecard is cancelled.
+                    links.Add(new ActionLink(){
+                        Method = Method.Delete,
+                        Relationship = ActionRelationship.Remove,
+                        Reference = $"/timesheets/{Identity.Value}/removal"
+                    });
                     break;
             }
 
@@ -156,13 +185,54 @@ namespace restapi.Models
             return links;
         }
 
-        public AnnotatedTimecardLine AddLine(TimecardLine timecardLine)
+        public AnnotatedTimecardLine AddLine(TimecardLine timecardLine,int lineNum)
         {
             var annotatedLine = new AnnotatedTimecardLine(timecardLine);
-
+            
+            annotatedLine.LineNumber = lineNum;
             Lines.Add(annotatedLine);
+            
 
             return annotatedLine;
         }
+
+        /**
+            Method that takes the timecard line and line number as input and replaces the line 
+            corresponding to the line number in the database with the new contents.
+        */
+        public AnnotatedTimecardLine replaceLine(TimecardLine timecardLine,int lineNum)
+        {
+            var oldtimecardLine = new AnnotatedTimecardLine(timecardLine);
+            oldtimecardLine.LineNumber = lineNum;
+            Lines.Remove(oldtimecardLine);
+            return AddLine(timecardLine,lineNum); // adding the same line that was supposed to be replaced.
+        }
+
+        /**
+            Method that updates the items in the line which have been modified by the user.
+            This is done based on the line number.
+         */
+        public AnnotatedTimecardLine updateLineItem(TimecardLine timecardLine, int lineNum)
+        {
+            // The Lines are stored in the list at positions coressponding to their lineNum-1
+            var storedTimeCardLine = Lines.ElementAtOrDefault(lineNum-1);
+            if(timecardLine.Week != 0){
+                storedTimeCardLine.Week = timecardLine.Week;
+            }
+            if(timecardLine.Day != storedTimeCardLine.Day){
+                storedTimeCardLine.Day = timecardLine.Day;
+            }
+            if(timecardLine.Year != 0){
+                storedTimeCardLine.Year = timecardLine.Year;
+            }
+            if(timecardLine.Hours != 0){
+                storedTimeCardLine.Hours = timecardLine.Hours;
+            }
+
+            if(timecardLine.Project != null){
+                storedTimeCardLine.Project = timecardLine.Project;
+            }
+            return storedTimeCardLine;
+        }
     }
-}
+} 
